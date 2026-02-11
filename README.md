@@ -16,5 +16,5 @@ This project was created as an experiment to understand the fundamentals behind 
 
 ### Preview
 <p align="center">
-  <img src="images/render.gif" width="600" />
+  <img src="images/render.png" width="600" />
 </p>
