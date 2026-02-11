@@ -45,7 +45,7 @@ class Camera{
         
     }
     sphere(p){
-        var sphere = createVector(0,-1,6)
+        var sphere = createVector(0,-1,5)
         var r = 1
         var sphereDist = p5.Vector.dist(p,sphere) -r
 
@@ -54,11 +54,11 @@ class Camera{
     GetDist(p){
         var sphere = createVector(0,0,5)
         var r = .5
-        var sphereDist = p5.Vector.dist(mod(p,5),sphere) -r
+        var sphereDist = p5.Vector.dist(p,sphere) -r
         var planeDist = -p.y + 1
         //var square = this.sdBox(p)
 
-        return sphereDist//min(sphereDist,planeDist)
+        return min(sphereDist,planeDist)
     
     }
     sdBox(p)
@@ -167,12 +167,15 @@ var cam
 
 function setup(){
     c = createCanvas(500,500);
-    cam = new Camera(0,0,0,1,2)
-    cam.setRays(1)
-    var n = 20
-    var count = 0
-    var t = 0
+    cam = new Camera(0,0,0,1,3)
+
+    cam.setRays()
+    const startTime = performance.now();
     cam.drawSqares()
+    const endTime = performance.now();
+    print("Tiempo de ejecución: ", endTime - startTime, "milisegundos")
+
+    
 
 
     
